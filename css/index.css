@@ -133,22 +133,43 @@ table {
 html,
 body {
   height: 100%;
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url(https://fonts.gstatic.com/s/raleway/v13/1Ptrg8zYS_SKggPNwOIpWqZPBQ.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v13/1Ptug8zYS_SKggPNyC0ISg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Raleway SemiBold'), local('Raleway-SemiBold'), url(https://fonts.gstatic.com/s/raleway/v13/1Ptrg8zYS_SKggPNwPIsWqZPBQ.ttf) format('truetype');
+}
+html {
   font-size: 62.5%;
 }
 .container {
   width: 50%;
   margin: 0 auto;
-  background: orangered;
+  background: gray;
 }
 .navbar {
   display: flex;
-  align-content: center;
-  justify-content: flex-end;
-  padding-top: 3rem;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 5rem;
+  padding-top: 3rem;
+  font-family: "Raleway", sans-serif;
 }
 .navbar__link {
-  color: black;
+  color: #000;
   font-size: 2rem;
   text-decoration: none;
 }
@@ -158,15 +179,28 @@ body {
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  margin-bottom: 5rem;
+  font-family: "Raleway", sans-serif;
 }
 .header__img {
-  width: 30rem;
-  border-radius: 30rem;
+  background: url("https://picsum.photos/300") no-repeat center center;
+  background-size: cover;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 20rem;
 }
 .header__copy {
-  background: yellowgreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 10%;
 }
 .header__copy--name {
-  font-size: 4rem;
+  margin-bottom: 2rem;
+  font-size: 5rem;
+}
+.header__copy--tagline {
+  font-size: 3rem;
 }
