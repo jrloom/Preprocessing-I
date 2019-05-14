@@ -155,10 +155,12 @@ body {
 html {
   font-size: 62.5%;
 }
+body {
+  background: #fff;
+}
 .container {
   width: 50%;
   margin: 0 auto;
-  background: gray;
 }
 .navbar {
   display: flex;
@@ -203,4 +205,33 @@ html {
 }
 .header__copy--tagline {
   font-size: 3rem;
+}
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+.content__intro {
+  width: 60%;
+}
+.content__summary {
+  align-self: flex-start;
+  width: 30%;
+  margin-left: 10%;
+}
+.content__summary--skill {
+  padding: 1rem 0;
+}
+.content__summary--skill::before {
+  margin-right: 0.3rem;
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-ligatures: normal;
+  font-weight: 900;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
 }

@@ -151,9 +151,6 @@ body {
 @font-main: @raleway;
 @raleway: "Raleway", sans-serif;
 
-//Spacing
-// @vertical-section: 5rem;
-
 //Mixins
 .center-all() {
   display: flex;
@@ -174,10 +171,14 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  background: @color-white;
+}
+
 .container {
   width: 50%;
   margin: 0 auto;
-  background: gray;
+  // background: gray;
 }
 
 .navbar {
@@ -216,6 +217,34 @@ html {
     }
     &--tagline {
       font-size: 3rem;
+    }
+  }
+}
+
+.content {
+  .center-all();
+  font-size: 1.6rem;
+  line-height: 1.5;
+  &__intro {
+    width: 60%;
+  }
+  &__summary {
+    align-self: flex-start;
+    width: 30%;
+    margin-left: 10%;
+    &--skill {
+      padding: 1rem 0;
+      &::before {
+        margin-right: 0.3rem;
+        content: "\f105";
+        font-family: "Font Awesome 5 Free";
+        font-style: normal;
+        font-variant-caps: normal;
+        font-variant-ligatures: normal;
+        font-weight: 900;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+      }
     }
   }
 }
