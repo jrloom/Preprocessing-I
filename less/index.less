@@ -194,6 +194,7 @@ body {
 
 .container {
   width: 50%;
+  padding: 3rem 0;
   margin: 0 auto;
 }
 
@@ -250,7 +251,7 @@ body {
 }
 
 .history {
-  .vertical-spacing;
+  .vertical-spacing();
   &__title {
     .section-title();
   }
@@ -277,6 +278,29 @@ body {
     }
     &--desc {
       .section-copy();
+    }
+  }
+}
+
+.contact {
+  .vertical-spacing();
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__title {
+    .section-title();
+    margin: 2rem;
+  }
+  &__form {
+    &--input {
+      width: 40rem;
+      margin: 1rem 0;
+    }
+    &--comment {
+      width: 40rem;
+    }
+    &--btn {
+      margin-top: 2rem;
     }
   }
 }
