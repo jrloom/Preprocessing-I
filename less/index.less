@@ -152,19 +152,36 @@ body {
 @raleway: "Raleway", sans-serif;
 
 //Mixins
-.center-all() {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .center-axis() {
   display: flex;
   align-items: center;
+  justify-content: space-around;
+}
+
+.section-title() {
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.section() {
+  padding: 2rem 0;
+  margin-top: 2rem;
+  border-bottom: 1px solid black;
+}
+
+.section-subtitle() {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.section-copy() {
+  font-size: 1.6rem;
+  line-height: 1.7;
 }
 
 .vertical-spacing() {
-  margin-bottom: 5rem;
+  margin-bottom: 10rem;
 }
 
 html {
@@ -178,11 +195,10 @@ body {
 .container {
   width: 50%;
   margin: 0 auto;
-  // background: gray;
 }
 
 .navbar {
-  .center-all;
+  .center-axis;
   .vertical-spacing;
   padding-top: 3rem;
   font-family: @font-main;
@@ -197,7 +213,7 @@ body {
 }
 
 .header {
-  .center-all;
+  .center-axis;
   .vertical-spacing;
   font-family: @font-main;
   &__img {
@@ -208,43 +224,59 @@ body {
     border-radius: 20rem;
   }
   &__copy {
-    .center-all;
+    .center-axis;
     flex-direction: column;
-    margin-left: 10%;
+    width: 60%;
     &--name {
       margin-bottom: 2rem;
       font-size: 5rem;
     }
     &--tagline {
-      font-size: 3rem;
+      font-size: 1.6rem;
+      line-height: 1.7;
     }
   }
 }
 
-.content {
-  .center-all();
-  font-size: 1.6rem;
-  line-height: 1.5;
-  &__intro {
-    width: 60%;
+.summary {
+  .center-axis;
+  .vertical-spacing;
+  font-size: 2rem;
+  line-height: 2;
+  &__col {
+    .center-axis;
+    flex-direction: column;
   }
-  &__summary {
-    align-self: flex-start;
-    width: 30%;
-    margin-left: 10%;
-    &--skill {
-      padding: 1rem 0;
-      &::before {
-        margin-right: 0.3rem;
-        content: "\f105";
-        font-family: "Font Awesome 5 Free";
-        font-style: normal;
-        font-variant-caps: normal;
-        font-variant-ligatures: normal;
-        font-weight: 900;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-      }
+}
+
+.history {
+  .vertical-spacing;
+  &__title {
+    .section-title();
+  }
+  &__job {
+    .section();
+    &--company {
+      .section-subtitle();
+    }
+    &--desc {
+      .section-copy();
+    }
+  }
+}
+
+.edu {
+  .vertical-spacing();
+  &__title {
+    .section-title();
+  }
+  &__place {
+    .section();
+    &--name {
+      .section-subtitle();
+    }
+    &--desc {
+      .section-copy();
     }
   }
 }

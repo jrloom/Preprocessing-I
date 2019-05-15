@@ -165,8 +165,8 @@ body {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 5rem;
+  justify-content: space-around;
+  margin-bottom: 10rem;
   padding-top: 3rem;
   font-family: "Raleway", sans-serif;
 }
@@ -181,8 +181,8 @@ body {
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 5rem;
+  justify-content: space-around;
+  margin-bottom: 10rem;
   font-family: "Raleway", sans-serif;
 }
 .header__img {
@@ -195,43 +195,73 @@ body {
 .header__copy {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
-  margin-left: 10%;
+  width: 60%;
 }
 .header__copy--name {
   margin-bottom: 2rem;
   font-size: 5rem;
 }
 .header__copy--tagline {
-  font-size: 3rem;
+  font-size: 1.6rem;
+  line-height: 1.7;
 }
-.content {
+.summary {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  margin-bottom: 10rem;
+  font-size: 2rem;
+  line-height: 2;
+}
+.summary__col {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.history {
+  margin-bottom: 10rem;
+}
+.history__title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+.history__job {
+  padding: 2rem 0;
+  margin-top: 2rem;
+  border-bottom: 1px solid black;
+}
+.history__job--company {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.history__job--desc {
   font-size: 1.6rem;
-  line-height: 1.5;
+  line-height: 1.7;
 }
-.content__intro {
-  width: 60%;
+.edu {
+  margin-bottom: 10rem;
 }
-.content__summary {
-  align-self: flex-start;
-  width: 30%;
-  margin-left: 10%;
+.edu__title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-align: center;
 }
-.content__summary--skill {
-  padding: 1rem 0;
+.edu__place {
+  padding: 2rem 0;
+  margin-top: 2rem;
+  border-bottom: 1px solid black;
 }
-.content__summary--skill::before {
-  margin-right: 0.3rem;
-  content: "\f105";
-  font-family: "Font Awesome 5 Free";
-  font-style: normal;
-  font-variant-caps: normal;
-  font-variant-ligatures: normal;
-  font-weight: 900;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
+.edu__place--name {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.edu__place--desc {
+  font-size: 1.6rem;
+  line-height: 1.7;
 }
