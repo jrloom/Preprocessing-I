@@ -4,56 +4,317 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,400,600");
+
+//Variables
+
+//Colors
+@color-black: #000;
+@color-white: #fff;
+
+//Fonts
+@font-main: @raleway;
+@raleway: "Raleway", sans-serif;
+
+//Mixins
+.center-axis() {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.section-title() {
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.section() {
+  padding: 2rem 0;
+  margin-top: 2rem;
+  border-bottom: 1px solid black;
+}
+
+.section-subtitle() {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.section-copy() {
+  font-size: 1.6rem;
+  line-height: 1.7;
+}
+
+.vertical-spacing() {
+  margin-bottom: 10rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: @color-white;
+}
+
+.container {
+  width: 50%;
+  padding: 3rem 0;
+  margin: 0 auto;
+  @media (max-width: 500px) {
+    width: 100%;
+    padding: 3rem;
+  }
+}
+
+.navbar {
+  .center-axis;
+  .vertical-spacing;
+  padding-top: 3rem;
+  font-family: @font-main;
+  &__link {
+    color: @color-black;
+    font-size: 2rem;
+    text-decoration: none;
+    &:not(:last-child) {
+      margin-right: 4rem;
+    }
+  }
+}
+
+.header {
+  .center-axis;
+  .vertical-spacing;
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+  font-family: @font-main;
+  &__img {
+    background: url("https://picsum.photos/300") no-repeat center center;
+    background-size: cover;
+    height: 20rem;
+    width: 20rem;
+    border-radius: 20rem;
+  }
+  &__copy {
+    .center-axis;
+    flex-direction: column;
+    width: 60%;
+    @media (max-width: 500px) {
+      width: 100%;
+      margin-top: 2rem;
+    }
+    &--name {
+      margin-bottom: 2rem;
+      font-size: 5rem;
+    }
+    &--tagline {
+      font-size: 1.6rem;
+      line-height: 1.7;
+      @media (max-width: 500px) {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.summary {
+  .center-axis;
+  .vertical-spacing;
+  font-size: 2rem;
+  line-height: 2;
+  &__col {
+    .center-axis;
+    flex-direction: column;
+  }
+}
+
+.history {
+  .vertical-spacing();
+  &__title {
+    .section-title();
+  }
+  &__job {
+    .section();
+    &--company {
+      .section-subtitle();
+    }
+    &--desc {
+      .section-copy();
+    }
+  }
+}
+
+.edu {
+  .vertical-spacing();
+  &__title {
+    .section-title();
+  }
+  &__place {
+    .section();
+    &--name {
+      .section-subtitle();
+    }
+    &--desc {
+      .section-copy();
+    }
+  }
+}
+
+.contact {
+  .vertical-spacing();
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__title {
+    .section-title();
+    margin: 2rem;
+  }
+  &__form {
+    &--input {
+      width: 40rem;
+      margin: 1rem 0;
+    }
+    &--comment {
+      width: 40rem;
+    }
+    &--btn {
+      margin-top: 2rem;
+    }
+  }
+}
