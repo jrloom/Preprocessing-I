@@ -196,6 +196,10 @@ body {
   width: 50%;
   padding: 3rem 0;
   margin: 0 auto;
+  @media (max-width: 500px) {
+    width: 100%;
+    padding: 3rem;
+  }
 }
 
 .navbar {
@@ -216,6 +220,9 @@ body {
 .header {
   .center-axis;
   .vertical-spacing;
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
   font-family: @font-main;
   &__img {
     background: url("https://picsum.photos/300") no-repeat center center;
@@ -228,6 +235,10 @@ body {
     .center-axis;
     flex-direction: column;
     width: 60%;
+    @media (max-width: 500px) {
+      width: 100%;
+      margin-top: 2rem;
+    }
     &--name {
       margin-bottom: 2rem;
       font-size: 5rem;
@@ -235,6 +246,9 @@ body {
     &--tagline {
       font-size: 1.6rem;
       line-height: 1.7;
+      @media (max-width: 500px) {
+        text-align: center;
+      }
     }
   }
 }
